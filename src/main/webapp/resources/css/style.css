@@ -1,0 +1,60 @@
+.container {
+    margin-left: 20%;
+    width: 800px;
+    border: solid 1px black;
+}
+.header, .footer{
+    height: 150px;
+    border: solid 1px black;
+    background: blueviolet;
+}
+.box{
+
+    overflow: auto;
+    height:500px;
+}
+.left_column {
+    float: left;
+    height: 100%;
+    background: greenyellow;
+    width: 20%;
+}
+.cells_cont {
+    height: 100%;
+    width:79%;
+    display: inline-block;
+    vertical-align: top;
+
+}
+.cells {
+    height: 30%;
+    display: inline-block;
+    width: 30%;
+    text-align: center;
+    padding-left: 3px;
+    margin: 5px;
+    border: black solid 2px;
+}
+.menu-item {
+    padding :10px;
+    background: lawngreen;
+    height: 35px;
+    border: solid black 1px;
+    border-right: 3px;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
