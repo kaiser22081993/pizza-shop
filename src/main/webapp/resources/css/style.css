@@ -1,25 +1,35 @@
 .container {
     margin-left: 20%;
     width: 800px;
-    border: solid 1px black;
+
+}
+body {
+    background: wheat;
 }
 .header, .footer{
+    background: white;
+    text-align: center;
     height: 150px;
-    border: solid 1px black;
-    background: blueviolet;
+    border: solid 3px black;
+
 }
 .box{
 
-    overflow: auto;
+    overflow: hidden;
     height:500px;
+}
+img{
+    width: 125px;
+    height: 60px;
+    vertical-align: top;
 }
 .left_column {
     float: left;
     height: 100%;
-    background: greenyellow;
     width: 20%;
 }
 .cells_cont {
+    margin-top: 5px;
     height: 100%;
     width:79%;
     display: inline-block;
@@ -27,6 +37,7 @@
 
 }
 .cells {
+    background: white;
     height: 30%;
     display: inline-block;
     width: 30%;
@@ -36,14 +47,30 @@
     border: black solid 2px;
 }
 .menu-item {
-    padding :10px;
+    text-align: center;
+    margin: 10px;
     background: lawngreen;
-    height: 35px;
     border: solid black 1px;
-    border-right: 3px;
-
 
 }
+.footer {
+    margin-top: 50px;
+}
+.pager {
+    height: 30px;
+    border: solid black 1px;
+    background: white;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 

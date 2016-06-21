@@ -74,6 +74,7 @@ public class Pizza {
     public static Pizza generateRandomPizza() {
         Pizza p = new Pizza();
         int uuid = (int) (1000 * Math.random());
+        p.setTitle("Random pizza #" + uuid);
         p.setDescription("description: " + uuid);
         p.setPreviewLarge("large/preview/" + uuid);
         p.setPreview("preview/" + uuid);

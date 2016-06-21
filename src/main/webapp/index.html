@@ -4,16 +4,19 @@
     <meta charset="UTF-8">
     <title>Pizza Shop</title>
     <link href="resources/css/style.css" rel="stylesheet" type="text/css">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src='https://cdn.jsdelivr.net/stream.js/latest/stream.min.js'></script>
+    <script src="resources/js/angular_app.js"></script>
 </head>
-<body>
+<body ng-app="myApp" >
 
 
-<div class="container">
+<div class="container" ng-controller="myCtrl">
     <div class="header">
         <h1>Pizza Main</h1>
         <h2>HEADER</h2>
     </div>
-    <div class="box">
+    <div class="box" >
         <div class="left_column">
             <div class="menu-item"><h3>Menu Item</h3></div>
             <div class="menu-item"><h3>Menu Item</h3></div>
@@ -21,22 +24,20 @@
             <div class="menu-item"><h3>Menu Item</h3></div>
         </div>
         <div class="cells_cont">
-            <div class="cells">Pizza</div>
-            <div class="cells">Pizza</div>
-            <div class="cells">Pizza</div>
-            <div class="cells">Pizza</div>
-            <div class="cells">Pizza</div>
-            <div class="cells">Pizza</div>
-            <div class="cells">Pizza</div>
-            <div class="cells">Pizza</div>
-            <div class="cells">Pizza</div>
-
-
+            <div ng-repeat="pizza in pizzas" class="cells">
+                <p>{{ pizza.title }}</p>
+                <img src="resources/images/pizza.jpg">
+                <p>{{ pizza.price | currency }}</p>
+            </div>
         </div>
-<!--        <div class="pager"></div>-->
+
+    </div>
+    <div class="pager"><input type="button" ng-click="next()" value="next">
+        <input type="button" ng-click="next()" value="previous">
     </div>
     <div class="footer">
         <h2>FOOTER</h2>
+        <p>Powered by: {{firstName + " " + lastName}}</p>
     </div>
 
 </div>
