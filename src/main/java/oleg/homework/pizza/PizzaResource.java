@@ -73,9 +73,7 @@ public class PizzaResource {
 
     @DELETE
     @MatrixParam("admin")
-    public void deletePizza(int id) {
-
-    }
+    public void deletePizza(int id) { }
 
     @PUT
     @MatrixParam("admin")
