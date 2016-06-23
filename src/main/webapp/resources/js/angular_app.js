@@ -13,16 +13,21 @@ app.controller('myCtrl',function ($scope, $http) {
         $scope.pizzas = response.data;
         $scope.hs = response.headers("link");
         console.log(response.headers());
-        var xhr = new XMLHttpRequest();
-        //FIX THIS!!!!
+
+
+
+
         nextUrl = parseLinkHeader(response.headers("link"))["next"]["href"];
         prevUrl = parseLinkHeader(response.headers("link"))["previous"]["href"];
 
     }, function myError(response) {
         $scope.myWelcome = response.statusText;
     });
+
     $scope.next = function(){
         console.log("next func!");
+        $(".cells_cont").hide(200);
+
         $http({
             method : "GET",
             url : nextUrl
@@ -39,9 +44,12 @@ app.controller('myCtrl',function ($scope, $http) {
         }, function myError(response) {
             $scope.myWelcome = response.statusText;
         });
+        $(".cells_cont").show(200);
     };
     $scope.previous = function(){
         console.log("next func!");
+        $(".cells_cont").hide(200);
+
         $http({
             method : "GET",
             url : prevUrl
@@ -58,9 +66,14 @@ app.controller('myCtrl',function ($scope, $http) {
         }, function myError(response) {
             $scope.myWelcome = response.statusText;
         });
+        $(".cells_cont").show(200);
     };
     $scope.firstName = "Oleh";
     $scope.lastName = "Kapustkin";
+
+    $scope.getOne = function(index){
+        $scope.targetPizza = $scope.pizzas[index];
+    }
 
 
 });

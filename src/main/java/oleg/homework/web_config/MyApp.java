@@ -15,5 +15,6 @@ public class MyApp extends ResourceConfig {
                 bind(PizzaRepository.class).to(PizzaRepository.class);
             }
         });
+
     }
 }

@@ -3,6 +3,7 @@ package oleg.homework.pizza;
 
 import oleg.homework.web_config.MyApp;
 
+import javax.annotation.security.RolesAllowed;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -27,13 +28,14 @@ public class PizzaResource {
 
     @GET
     public Response getAllPizza(@DefaultValue("0")@QueryParam("start")int start, @DefaultValue("9")@QueryParam("end")int end) {
+        LOG.info("GET ALL: started");
         List<Pizza> pizzas = repository.getAll(start, end);
 
         int nextStart = end;
         int nextEnd = nextStart + 9;
         int prevStrat = (start > 9)? start - 9 : 0;
         int prevEnd = prevStrat + 9;
-
+        LOG.info("GET ALL: pre end");
         return Response
                 .ok(pizzas)
                 .link(UriBuilder
@@ -49,6 +51,7 @@ public class PizzaResource {
 
     @GET
     @Path("{id}")
+
     public Response getOnePizza(@PathParam("id")int id) {
         LOG.info("GET ONE!!!!!!!!!!");
         Pizza p = repository.getOne(id)
