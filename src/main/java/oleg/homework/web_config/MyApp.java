@@ -1,6 +1,8 @@
 package oleg.homework.web_config;
 
 
+import oleg.homework.order.Order;
+import oleg.homework.order.OrderRepository;
 import oleg.homework.pizza.PizzaRepository;
 import org.glassfish.hk2.utilities.binding.AbstractBinder;
 import org.glassfish.jersey.server.ResourceConfig;
@@ -12,7 +14,9 @@ public class MyApp extends ResourceConfig {
         register(new AbstractBinder() {
             @Override
             protected void configure() {
+
                 bind(PizzaRepository.class).to(PizzaRepository.class);
+                bind(OrderRepository.class).to(OrderRepository.class);
             }
         });
 
