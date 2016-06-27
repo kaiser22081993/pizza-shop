@@ -82,4 +82,9 @@ public class Pizza {
         p.setId(uuid);
         return p;
     }
+
+    @Override
+    public String toString() {
+        return "Pizza: " + title;
+    }
 }

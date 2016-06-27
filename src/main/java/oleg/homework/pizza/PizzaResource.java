@@ -2,15 +2,15 @@ package oleg.homework.pizza;
 
 
 import oleg.homework.web_config.MyApp;
+import org.glassfish.jersey.internal.util.Base64;
 
+import javax.annotation.security.PermitAll;
 import javax.annotation.security.RolesAllowed;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 import javax.ws.rs.*;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.core.UriBuilder;
+import javax.ws.rs.core.*;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -26,16 +26,18 @@ public class PizzaResource {
     @Inject
     PizzaRepository repository;
 
+    @PermitAll
     @GET
-    public Response getAllPizza(@DefaultValue("0")@QueryParam("start")int start, @DefaultValue("9")@QueryParam("end")int end) {
-        LOG.info("GET ALL: started");
+    public Response getAllPizza(@DefaultValue("0")@QueryParam("start")int start
+            , @DefaultValue("9")@QueryParam("end")int end,@Context  HttpHeaders headers) {
+
         List<Pizza> pizzas = repository.getAll(start, end);
 
+        //Links for the next and previous pages.
         int nextStart = end;
         int nextEnd = nextStart + 9;
         int prevStrat = (start > 9)? start - 9 : 0;
         int prevEnd = prevStrat + 9;
-        LOG.info("GET ALL: pre end");
         return Response
                 .ok(pizzas)
                 .link(UriBuilder
@@ -49,13 +51,16 @@ public class PizzaResource {
                 .build();
     }
 
+    @PermitAll
     @GET
     @Path("{id}")
+    public Response getOnePizza(@PathParam("id")int id ) {
 
-    public Response getOnePizza(@PathParam("id")int id) {
         LOG.info("GET ONE!!!!!!!!!!");
         Pizza p = repository.getOne(id)
                 .orElseThrow(() -> new NotFoundException("pizza not found!"));
+
+        //Add link header with next and previous pizza
         return Response
                 .ok(p)
                 .link(UriBuilder
@@ -69,17 +74,25 @@ public class PizzaResource {
 
 
     @POST
-    @MatrixParam("adimin")
-    public Response addPizza(Pizza p) {
-        return null;
+    @RolesAllowed("admin")
+    public Response addPizza(Pizza p,@Context  HttpHeaders headers) {
+
+
+        repository.createPizza(p);
+        return Response
+                .created(UriBuilder
+                        .fromResource(PizzaResource.class)
+                        .path("" + p.getId())
+                        .build())
+                .build();
     }
 
     @DELETE
-    @MatrixParam("admin")
+    @RolesAllowed("admin")
     public void deletePizza(int id) { }
 
     @PUT
-    @MatrixParam("admin")
+    @RolesAllowed("admin")
     public void updatePizza(Pizza p) {
 
     }

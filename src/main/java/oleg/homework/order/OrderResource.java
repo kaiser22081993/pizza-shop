@@ -1,5 +1,6 @@
 package oleg.homework.order;
 
+import javax.annotation.security.PermitAll;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 import javax.ws.rs.*;
@@ -16,6 +17,7 @@ public class OrderResource {
     OrderRepository orders;
 
     //ADMIN ONLY
+    @PermitAll
     @GET
     public List<Order> getAllOrders()
     {
@@ -29,10 +31,12 @@ public class OrderResource {
         return null;
     }*/
 
+    @PermitAll
     @POST
     public void createOrder(Order o){
         orders.createOrder(o);
     }
+
 
     @DELETE
     public void cancelOrder(int id){
@@ -41,8 +45,9 @@ public class OrderResource {
 
     //ADMIN ONLY
 
+    @PermitAll
     @PUT
-    public void updateOrder(Order o){
+    public void cancelOrder(Order o){
 
     }
 

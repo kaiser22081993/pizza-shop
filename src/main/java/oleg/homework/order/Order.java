@@ -1,7 +1,5 @@
 package oleg.homework.order;
 
-
-import oleg.homework.Courier;
 import oleg.homework.pizza.PizzaItem;
 
 
@@ -11,7 +9,7 @@ public class Order {
     private String date;
     private int estimatedDeliveryTime;
     private int deliveryTime;
-    private Courier courier;
+    private boolean canceled;
     private PizzaItem item;
     private String address;
     private String phone;
@@ -24,16 +22,15 @@ public class Order {
         this.phone = phone;
         this.address = address;
         this.item = item;
-
         this.deliveryTime = deliveryTime;
         this.estimatedDeliveryTime = estimatedDeliveryTime;
         this.date = date;
+        canceled = false;
     }
 
     public void updateFrom(Order o){
         o.setAddress(o.getAddress());
         o.setCustomer(o.getCustomer());
-        o.setCourier(o.getCourier());
         o.setDate(o.getDate());
         o.setItem(o.getItem());
         o.setDeliveryTime(o.getDeliveryTime());
@@ -71,14 +68,6 @@ public class Order {
 
     public void setDeliveryTime(int deliveryTime) {
         this.deliveryTime = deliveryTime;
-    }
-
-    public Courier getCourier() {
-        return courier;
-    }
-
-    public void setCourier(Courier courier) {
-        this.courier = courier;
     }
 
     public PizzaItem getItem() {

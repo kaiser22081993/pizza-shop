@@ -4,6 +4,8 @@ package oleg.homework.pizza;
 import javax.annotation.PostConstruct;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.persistence.EntityManager;
+import javax.persistence.Persistence;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -14,13 +16,23 @@ import java.util.stream.Collectors;
 @ApplicationScoped
 public class PizzaRepository {
 
+
+    private EntityManager em;
+
     private Map<Integer, Pizza> db;
 
     Logger LOG = Logger.getLogger(PizzaRepository.class.getSimpleName());
 
     @PostConstruct
     public void init() {
+
         LOG.info("Pizza Repository: -- " + this.toString());
+        em = Persistence.createEntityManagerFactory("PizzaShop").createEntityManager();
+        em.createNativeQuery("select * FROM pizza;")
+                .getResultList()
+                .stream()
+                .forEach(x->LOG.info(x.toString()));
+
         db = new LinkedHashMap<>();
 
 
@@ -28,6 +40,7 @@ public class PizzaRepository {
             Pizza p = Pizza.generateRandomPizza();
             db.put(p.getId(), p);
         }
+
     }
 
     public List<Pizza> getAll(int start, int end) {
@@ -35,7 +48,7 @@ public class PizzaRepository {
         List<Pizza> pizzas = new ArrayList<>();
         LOG.info("get all:");
         for (int i = start; i < end; i++) {
-                if(i < keyList.size())
+            if (i < keyList.size())
                 pizzas.add(db.get(keyList.get(i)));
 
         }
@@ -45,6 +58,11 @@ public class PizzaRepository {
     public Optional<Pizza> getOne(int id) {
 
         return Optional.ofNullable(db.get(id));
+    }
+
+    public void createPizza(Pizza p) {
+        Objects.nonNull(p);
+        db.put(p.getId(), p);
     }
 
     public int getNext(int id) {
