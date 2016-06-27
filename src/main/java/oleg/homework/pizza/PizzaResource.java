@@ -74,7 +74,6 @@ public class PizzaResource {
 
 
     @POST
-    @RolesAllowed("admin")
     public Response addPizza(Pizza p,@Context  HttpHeaders headers) {
 
 
@@ -88,11 +87,9 @@ public class PizzaResource {
     }
 
     @DELETE
-    @RolesAllowed("admin")
     public void deletePizza(int id) { }
 
     @PUT
-    @RolesAllowed("admin")
     public void updatePizza(Pizza p) {
 
     }

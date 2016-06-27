@@ -16,25 +16,19 @@ import java.util.stream.Collectors;
 @ApplicationScoped
 public class PizzaRepository {
 
-
+    //permanent Database
     private EntityManager em;
 
+    //test db
     private Map<Integer, Pizza> db;
 
     Logger LOG = Logger.getLogger(PizzaRepository.class.getSimpleName());
 
     @PostConstruct
     public void init() {
-
         LOG.info("Pizza Repository: -- " + this.toString());
         em = Persistence.createEntityManagerFactory("PizzaShop").createEntityManager();
-        em.createNativeQuery("select * FROM pizza;")
-                .getResultList()
-                .stream()
-                .forEach(x->LOG.info(x.toString()));
-
         db = new LinkedHashMap<>();
-
 
         for (int i = 0; i < 50; i++) {
             Pizza p = Pizza.generateRandomPizza();
@@ -65,6 +59,7 @@ public class PizzaRepository {
         db.put(p.getId(), p);
     }
 
+    //return next id from map
     public int getNext(int id) {
         List<Integer> keyList = db.keySet().stream().collect(Collectors.toList());
         for (int i = 0; i < keyList.size(); i++) {
@@ -75,6 +70,7 @@ public class PizzaRepository {
         return keyList.get(0);
     }
 
+    //return previous id from map
     public int getPrevious(int id) {
         List<Integer> keyList = db.keySet().stream().collect(Collectors.toList());
         for (int i = 0; i < keyList.size(); i++) {
