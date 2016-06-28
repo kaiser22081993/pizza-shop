@@ -23,6 +23,8 @@ import java.util.logging.Logger;
 @Provider
 public class SecurityFilter implements ContainerRequestFilter {
 
+    public static final String ADMIN_USER_NAME = "Oleh";
+    public static final String ADMIN_PASS = "123456";
     Logger LOG = Logger.getLogger(SecurityFilter.class.getName());
 
     @Context
@@ -30,8 +32,7 @@ public class SecurityFilter implements ContainerRequestFilter {
 
     @Override
     public void filter(ContainerRequestContext requestContext) throws IOException {
-        Map<String,String> users = new ConcurrentHashMap<>();
-        users.put("Oleh", "123456");
+
         requestContext.setSecurityContext(new SecurityContext() {
             @Override
             public Principal getUserPrincipal() {
@@ -61,10 +62,10 @@ public class SecurityFilter implements ContainerRequestFilter {
             String userAndPwd = Base64.decodeAsString(credentials.get(0).split(" ")[1]);
             String userName = userAndPwd.split(":")[0];
             String password = userAndPwd.split(":")[1];
-            if(users.get(userName) == null){
+            if(!ADMIN_USER_NAME.equals(ADMIN_USER_NAME)){
                 throw new WebApplicationException(Response.Status.UNAUTHORIZED);
             }
-            if(!users.get(userName).equals(password)) {
+            if(!ADMIN_PASS.equals(password)) {
                 throw new WebApplicationException(Response.Status.UNAUTHORIZED);
             }
         }

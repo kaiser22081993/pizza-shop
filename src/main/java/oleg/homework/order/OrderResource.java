@@ -6,7 +6,7 @@ import javax.inject.Singleton;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
 import java.util.List;
-
+//Fix singleton
 @Singleton
 @Path("/order")
 @Consumes("application/json")
@@ -16,8 +16,7 @@ public class OrderResource {
     @Inject
     OrderRepository orders;
 
-    //ADMIN ONLY
-    @PermitAll
+
     @GET
     public List<Order> getAllOrders()
     {
@@ -42,8 +41,6 @@ public class OrderResource {
     public void cancelOrder(int id){
 
     }
-
-    //ADMIN ONLY
 
     @PermitAll
     @PUT

@@ -27,8 +27,8 @@ public class PizzaRepository {
     @PostConstruct
     public void init() {
         LOG.info("Pizza Repository: -- " + this.toString());
-        em = Persistence.createEntityManagerFactory("PizzaShop").createEntityManager();
-        db = new LinkedHashMap<>();
+//        em = Persistence.createEntityManagerFactory("PizzaShop").createEntityManager();
+        db = new ConcurrentHashMap<>();
 
         for (int i = 0; i < 50; i++) {
             Pizza p = Pizza.generateRandomPizza();
