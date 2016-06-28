@@ -59,6 +59,7 @@ public class SecurityFilter implements ContainerRequestFilter {
         if(requestContext.getSecurityContext().isSecure()){
             //Checking user name and password
             List<String> credentials=  requestContext.getHeaders().get(HttpHeaders.AUTHORIZATION);
+			if(credentials == null || credentials.size() < 1) throw new WebApplicationException(Response.Status.UNAUTHORIZED);
             String userAndPwd = Base64.decodeAsString(credentials.get(0).split(" ")[1]);
             String userName = userAndPwd.split(":")[0];
             String password = userAndPwd.split(":")[1];
