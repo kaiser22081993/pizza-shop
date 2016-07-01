@@ -26,7 +26,7 @@ public class PizzaResource {
     @Inject
     PizzaRepository repository;
 
-    @PermitAll
+
     @GET
     public Response getAllPizza(@DefaultValue("0")@QueryParam("start")int start
             , @DefaultValue("9")@QueryParam("end")int end,@Context  HttpHeaders headers) {

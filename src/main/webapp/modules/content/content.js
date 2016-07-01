@@ -1,9 +1,9 @@
 
-var app = angular.module('myApp', []);
-var nextUrl = "rest/pizza";
-var prevUrl = "rest/pizza";
 
-app.controller('myCtrl',function ($scope, $http) {
+var nextUrl = "http://localhost:8080/pizza-shop/rest/pizza";
+var prevUrl = "http://localhost:8080/pizza-shop/rest/pizza";
+angular.module('Content')
+.controller('myCtrl',function ($scope, $http) {
     console.log("next ----")
     $http({
         method : "GET",

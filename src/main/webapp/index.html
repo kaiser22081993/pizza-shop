@@ -1,70 +1,43 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>Pizza Shop</title>
-    <link href="resources/css/style.css" rel="stylesheet" type="text/css">
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script src="resources/js/angular_app.js"></script>
-    <script src="resources/js/main.js"></script>
+<html ng-app="BasicHttpAuthExample">
+<head>
+    <meta charset="utf-8"/>
+    <title>AngularJS Basic HTTP Authentication Example</title>
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="http://code.angularjs.org/1.2.20/angular.js"></script>
+    <script src="http://code.angularjs.org/1.2.20/angular-route.js"></script>
+    <script src="http://code.angularjs.org/1.2.13/angular-cookies.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="modules/authentication/services.js"></script>
+    <script src="modules/authentication/controllers.js"></script>
+    <script src="modules/home/controllers.js"></script>
+    <script src="modules/content/content.js"></script>
+    <script src="modules/content/scrool.js"></script>
+    <link href="style/st.css" type="text/css" rel="stylesheet">
 </head>
-<body ng-app="myApp">
+<body>
 
-<div class="header">
-    <h1>Pizza Main</h1>
-
-</div>
-<div class="container" ng-controller="myCtrl">
-
-    <div class="box">
-        <div class="left_column">
-            <div class="menu-item"><h3>All Pizza</h3></div>
-            <div class="menu-item"><h3>Orders</h3></div>
-
-
-        </div>
-        <div class="cells_cont">
-            <div ng-repeat="pizza in pizzas" class="cells" ng-click="getOne($index)" onclick="onToggle()">
+<div ng-app="Content" class="container">
+    <div class="header"><h2>PIZZA MAIN</h2></div>
+    <div class="content" ng-controller="myCtrl">
+        <div class="left_p"></div>
+        <div class="main">
+            <div ng-repeat="pizza in pizzas" class="cell" ng-click="getOne($index)" onclick="onToggle()">
                 <p>{{ pizza.title }}</p>
-                <img src="resources/images/pizza.jpg">
 
                 <p>{{ pizza.price | currency }}</p>
 
             </div>
-
-            <span ng-click="previous()" class="button">Previous</span>
-            <span ng-click="next()" class="button" style="margin-left: 80%">Next</span>
-
         </div>
-        <div class="cell_detail">
-            <h2>{{ targetPizza.title }}</h2>
-            <span class="big-img"><img class="big-img" src="resources/images/pizza.jpg"></span>
-
-            <h3>price: {{" " + targetPizza.price | currency }}</h3>
-
-            <h3>id: {{" " + targetPizza.id }}</h3>
-
-            <h3>description:{{" " + targetPizza.description }}</h3>
-        </div>
-<!--
-        <div class="pager"><input type="button" ng-click="next()" value="next">
-            <input type="button" ng-click="previous()" value="previous">
-
-        </div>
--->
-
-
     </div>
 
-
-
 </div>
-<div class="footer">
-    <h2>FOOTER</h2>
-
-    <p>Powered by: {{firstName + " " + lastName}}</p>
+<div class="jumbotron">
+    <div class="col-xs-offset-2 col-xs-8">
+        <div ng-view></div>
+    </div>
 </div>
+
 
 </body>
 </html>

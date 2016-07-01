@@ -1,8 +1,12 @@
 package oleg.homework.pizza;
 
+import javax.persistence.*;
 
+@Entity
+@Table(name = "pizza")
 public class Pizza {
 
+    @Id
     private int id;
     private String title;
     private float  price;
