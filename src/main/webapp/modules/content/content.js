@@ -3,8 +3,8 @@
 var nextUrl = "http://localhost:8080/pizza-shop/rest/pizza";
 var prevUrl = "http://localhost:8080/pizza-shop/rest/pizza";
 angular.module('Content')
-.controller('myCtrl',function ($scope, $http) {
-    console.log("next ----")
+.controller('myCtrl',function ($scope, $http, $rootScope ) {
+    console.log("next ----");
     $http({
         method : "GET",
         url : nextUrl
@@ -13,8 +13,7 @@ angular.module('Content')
         $scope.pizzas = response.data;
         $scope.hs = response.headers("link");
         console.log(response.headers());
-
-
+        $rootScope.pizzas = response.data;
 
 
         nextUrl = parseLinkHeader(response.headers("link"))["next"]["href"];
@@ -70,11 +69,16 @@ angular.module('Content')
     };
     $scope.firstName = "Oleh";
     $scope.lastName = "Kapustkin";
-
+    $rootScope.ordered = [];
     $scope.getOne = function(index){
         $scope.targetPizza = $scope.pizzas[index];
-    }
+    };
+    $scope.addToOrders = function addT(index){
 
+        $rootScope.ordered.push($scope.pizzas[index]);
+
+        alert($rootScope.ordered.length);
+    }
 
 });
 

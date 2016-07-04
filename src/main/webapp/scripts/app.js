@@ -4,11 +4,12 @@
 angular.module('Authentication', []);
 angular.module('Home', []);
 angular.module('Content',[]);
+angular.module('Order',[]);
 angular.module('BasicHttpAuthExample', [
     'Authentication',
     'Home',
     'ngRoute',
-    'ngCookies','Content'
+    'ngCookies','Content','Order'
 ])
 
 .config(['$routeProvider', function ($routeProvider) {

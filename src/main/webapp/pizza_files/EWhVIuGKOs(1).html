@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!-- saved from url=(0023)http://sn.am/EWhVIuGKOs -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Форма подписки</title>
+	
+	<meta name="Author" content="eSputnik.com.ua">
+	<link rel="stylesheet" type="text/css" href="./style.css">
+	<script src="./jquery.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="./jquery.validate.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+	  $("#sub_form").validate({
+	    focusInvalid: false,
+	    focusCleanup: true,
+	    rules: {
+	      Email: {
+	        required: true,
+	        email: true
+	      }
+	    },
+	    messages: {
+	      email: {
+	        required: "",
+	        email: ""
+	      },
+	      	firstname: {
+	        required: ""
+	      }
+	    }
+	});
+	});
+	</script>
+</head>
+<body>
+	<form method="post" action="http://sn.am/publication" id="sub_form" name="sub_form" novalidate="novalidate">
+		<table style="border-bottom-left-radius:10px;border-bottom-right-radius:10px;">
+			<tbody><tr>
+				<td class="top tdpad iefix"><input class="required" type="text" name="firstname" value="" placeholder="Имя"></td>
+			</tr>
+			<tr>
+				<td class="iefix"><input class="required" type="email" name="email" value="" placeholder="Email"></td>
+			</tr>
+			<tr>
+				<td class="">
+					<input type="submit" value="Подписаться" name="subscribe">
+					
+				</td>
+			</tr>
+			<tr>
+				<td align="center" class="bottom iefix"><span style="font-size:11px; color:#996633">подписалось 146617 человек</span></td>
+			</tr>
+
+		</tbody></table>
+		<input type="hidden" name="groupId" value="403507">
+	<input type="hidden" name="conversationId" value="40ec8de1-eba1-40c4-85e7-7504745bd665"><input type="text" name="emailInv100500" style="display:none" value=""></form>
+
+</body></html>

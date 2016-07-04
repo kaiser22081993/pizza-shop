@@ -1,0 +1,193 @@
+/* Filter styles */
+
+.filter_simple {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-size: .85em;
+    list-style: none;
+}
+
+.filter_simple li {
+    float: left;
+    padding: 0 0 12px;
+}
+
+.filter_simple a {
+    padding: .2em 0;
+    margin: 0 .4em;
+    text-decoration: none;
+    border-bottom: solid 1px #CCC;
+    color: #3F5F9E;
+}
+
+.filter_simple a:hover {
+    color: #FFF;
+    background: #404040;
+    padding: .2em .4em;
+    margin: 0;
+}
+
+.filter_simple li.selected  span {
+    padding: .2em .4em;
+    background: #829DBF;
+    color: white;
+}
+
+.filter_complex {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+}
+
+.filter_complex li {
+    font-size: .94em;
+    padding-bottom: .1em;
+}
+
+.filter_complex li input {
+    margin-bottom: 0;
+}
+
+.filter_complex li.selected a{
+    color: #329A1C;
+    font-weight: bold;
+}
+
+.current_filter {
+    color: #666;
+    font-weight: bold;
+    padding: 5px;
+    white-space: nowrap;
+}
+
+.current_filter img {
+    width: 10px;
+    margin-top: -2px;
+}
+
+.current_filter:hover {
+    color: #000;
+    background-color: #ED9;
+    font-weight: bold;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+
+
+/* Drop down link */
+.drop_down {
+}
+
+.drop_down .input .content ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+.drop_down .label, .drop_down .input {
+    line-height: 2em;
+    float: left;
+}
+
+.drop_down .input a {
+    margin: 5px 0;
+    padding: 0 5px;
+    line-height: 1.2;
+    display: block;
+}
+
+.drop_down .input .content .selected {
+    font-weight: bold;
+}
+
+.drop_down .input .content {
+    display: none;
+    padding: 0 5px;
+    z-index: 1000;
+}
+
+/* phones link */
+.drop_down .phones .content {
+    display: none;
+    z-index: 1000;
+    background-color: #fff;
+    position: absolute;
+    left: 0; top: 0;
+    margin: 4px 0 5px 6px;
+    padding: 5px 0 5px 30px;
+    width: 160px;
+    border-radius: 4px;
+}
+
+.drop_down .phones {
+    position: relative;
+}
+
+.drop_down .phones .content em {
+    font-size: 13px;
+    font-style: normal;
+    border-bottom: 1px dashed black;
+    cursor: pointer;
+}
+
+.drop_down .phones .content ul {
+    margin: 10px 0 0;
+}
+
+.drop_down .phones .content #hl {
+    margin: 0;
+    padding: 0;
+}
+
+.drop_down .phones .content ul.hl {
+    margin: 0 0 10px;
+}
+
+.drop_down .phones .content ul li {
+    font-size: 16px;
+    font-family: Arial;
+    font-weight: bold;
+}
+
+.drop_down .phones .content div.hf {
+    padding-bottom: 10px;
+    background: url(../img/bg-hands-free.gif) no-repeat;
+    margin-left: -22px;
+    padding-left: 22px;
+}
+
+/* languages link */
+.drop_down .languages .content {
+    display: none;
+    z-index: 1500;
+    background-color: #f0e1c0;
+    position: absolute;
+    border-color: #666;
+    border-radius: 4px;
+    margin-top: -2px;
+}
+
+.drop_down .languages {
+    position: relative;
+    margin-top: -2px;
+}
+
+.drop_down .languages .content .ul {
+    margin: 2px 10px 5px;
+}
+
+.drop_down .languages .content .ul .li {
+}
+
+.drop_down .languages .content .ul .li a {
+    float:none !important;
+    color:#000 !important;
+}
+.drop_down .languages .languages_drop_link {
+    background: url(../img/dropdwhite.png) no-repeat;
+    background-position: right;
+    padding-right: 15px;
+}
