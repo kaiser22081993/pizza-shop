@@ -89,10 +89,12 @@ public class PizzaResource {
     }
 
     @DELETE
-    public void deletePizza(int id) { }
+    public void deletePizza(int id) {
+        repository.delete(id);
+    }
 
     @PUT
     public void updatePizza(Pizza p) {
-
+        repository.updatePizza(p);
     }
 }

@@ -81,5 +81,15 @@ public class PizzaRepository {
         return keyList.get(keyList.size() - 1);
     }
 
+    public void delete(int id){
+        db.remove(id);
+    }
+
+    public void updatePizza(Pizza p){
+        Pizza pizzaFromDb = db.get(p.getId());
+        Objects.nonNull(pizzaFromDb);
+        pizzaFromDb = p;
+    }
+
 
 }
