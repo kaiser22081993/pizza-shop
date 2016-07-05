@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="BasicHttpAuthExample">
+<head>
+    <meta charset="utf-8"/>
+    <title>AngularJS Basic HTTP Authentication Example</title>
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="http://code.angularjs.org/1.2.20/angular.js"></script>
+    <script src="http://code.angularjs.org/1.2.20/angular-route.js"></script>
+    <script src="http://code.angularjs.org/1.2.13/angular-cookies.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="modules/authentication/services.js"></script>
+    <script src="modules/authentication/controllers.js"></script>
+    <script src="modules/home/controllers.js"></script>
+    <script src="modules/content/content.js"></script>
+    <script src="modules/content/scrool.js"></script>
+    <link href="style/st.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+
+<div ng-app="Content" class="container1">
+    <div class="header"><h2>PIZZA MAIN</h2></div>
+    <div class="content1" ng-controller="myCtrl">
+        <div class="left_p"></div>
+        <div class="main1">
+            <div ng-repeat="pizza in pizzas" class="cell" ng-click="getOne($index)" onclick="onToggle()">
+                <p>{{ pizza.title }}</p>
+
+                <p>{{ pizza.price | currency }}</p>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="jumbotron">
+    <div class="col-xs-offset-2 col-xs-8">
+        <div ng-view></div>
+    </div>
+</div>
+
+
+</body>
+</html>

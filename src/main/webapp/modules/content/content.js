@@ -69,16 +69,33 @@ angular.module('Content')
     };
     $scope.firstName = "Oleh";
     $scope.lastName = "Kapustkin";
+
     $rootScope.ordered = [];
+    $rootScope.totalSum = 0;
+
     $scope.getOne = function(index){
         $scope.targetPizza = $scope.pizzas[index];
     };
     $scope.addToOrders = function addT(index){
+        if($rootScope.ordered[index] == null){
+            $rootScope.ordered.push($scope.pizzas[index]);
+            $rootScope.totalSum += $scope.pizzas[index].price;
+        }
+        else {
+            $rootScope.ordered[index].quantity++;
+            $rootScope.totalSum += $scope.pizzas[index].price;
+        }
 
-        $rootScope.ordered.push($scope.pizzas[index]);
-
-        alert($rootScope.ordered.length);
     }
+        $rootScope.changeOrderQuantity = function(index) {
+
+            var sum = 0;
+            $rootScope.ordered.forEach(function(p){
+                sum += p.price * p.quantity;
+            })
+            $rootScope.totalSum = sum;
+        }
+
 
 });
 

@@ -32,12 +32,14 @@ public class PizzaResource {
             , @DefaultValue("9")@QueryParam("end")int end,@Context  HttpHeaders headers) {
 
         List<Pizza> pizzas = repository.getAll(start, end);
-
         //Links for the next and previous pages.
+        int length = end - start;
         int nextStart = end;
-        int nextEnd = nextStart + 9;
-        int prevStrat = (start > 9)? start - 9 : 0;
-        int prevEnd = prevStrat + 9;
+        int nextEnd = nextStart + length;
+        int prevStrat = (start > length)? start - length : 0;
+        int prevEnd = prevStrat + length;
+
+        //Write to Response
         return Response
                 .ok(pizzas)
                 .link(UriBuilder

@@ -13,6 +13,7 @@ public class Pizza {
     private String preview;
     private String previewLarge;
     private String description;
+    private int quantity = 1;
 
     public Pizza() {
 
@@ -73,6 +74,14 @@ public class Pizza {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public static Pizza generateRandomPizza() {

@@ -8,7 +8,8 @@ angular.module('Authentication')
         // reset login status
         AuthenticationService.ClearCredentials();
 
-        $scope.login = function () {
+        $rootScope.login = function () {
+            alert('login');
             $scope.dataLoading = true;
             AuthenticationService.Login($scope.username, $scope.password, function (response) {
                 if (response.success) {

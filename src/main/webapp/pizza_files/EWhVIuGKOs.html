@@ -9,41 +9,41 @@
 	<script type="text/javascript" src="./jquery.validate.js"></script>
 	<script type="text/javascript">
 	$(document).ready(function(){
-	  $("#sub_form").validate({
-	    focusInvalid: false,
-	    focusCleanup: true,
-	    rules: {
-	      Email: {
-	        required: true,
-	        email: true
-	      }
-	    },
-	    messages: {
-	      email: {
-	        required: "",
-	        email: ""
-	      },
-	      	firstname: {
-	        required: ""
-	      }
-	    }
-	});
+//	  $("#sub_form").validate({
+//	    focusInvalid: false,
+//	    focusCleanup: true,
+//	    rules: {
+//	      Email: {
+//	        required: true,
+//	        email: true
+//	      }
+//	    },
+//	    messages: {
+//	      email: {
+//	        required: "",
+//	        email: ""
+//	      },
+//	      	firstname: {
+//	        required: ""
+//	      }
+//	    }
+//	});
 	});
 	</script>
 </head>
-<body>
-	<form method="post" action="http://sn.am/publication" id="sub_form" name="sub_form" novalidate="novalidate">
+<body ng-app="Content" ng-controller="LoginController">
+	<form method="post" ng-submit="login()" id="sub_form" name="sub_form" novalidate="novalidate">
 		<table style="border-bottom-left-radius:10px;border-bottom-right-radius:10px;">
 			<tbody><tr>
-				<td class="top tdpad iefix"><input class="required" type="text" name="firstname" value="" placeholder="Имя"></td>
+				<td class="top tdpad iefix"><input class="required" type="text" name="firstname" ng-model="username" value="" placeholder="Имя"></td>
 			</tr>
 			<tr>
-				<td class="iefix"><input class="required" type="email" name="email" value="" placeholder="Пароль"></td>
+				<td class="iefix"><input class="required" type="email" name="email" value="" ng-model="password" placeholder="Пароль"></td>
 			</tr>
 			<tr>
 				<td class="">
-					<input type="submit" value="Войти" name="subscribe">
-					
+					<input type="submit" value="Войти" name="subscribe" ng-disabled="form.$invalid || dataLoading" class="btn btn-danger">
+					<img ng-if="dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
 				</td>
 			</tr>
 
