@@ -23,7 +23,7 @@ angular.module('Content')
         $scope.myWelcome = response.statusText;
     });
 
-    $scope.next = function(){
+    $rootScope.next = function(){
         console.log("next func!");
         $(".cells_cont").hide(200);
 
@@ -45,7 +45,7 @@ angular.module('Content')
         });
         $(".cells_cont").show(200);
     };
-    $scope.previous = function(){
+    $rootScope.previous = function(){
         console.log("next func!");
         $(".cells_cont").hide(200);
 
@@ -76,13 +76,29 @@ angular.module('Content')
     $scope.getOne = function(index){
         $scope.targetPizza = $scope.pizzas[index];
     };
+    $scope.isInOrders = function(title) {
+        for(var i = 0; i < $rootScope.ordered.length; i++){
+            if($rootScope.ordered[i].title === title){
+                return true;
+            }
+        }
+        return false;
+    };
+    $scope.findInOrders = function(title){
+        for(var i = 0; i < $rootScope.ordered.length; i++){
+            if($rootScope.ordered[i].title === title){
+                return $rootScope.ordered[i];
+            }
+        }
+        return null;
+    }
     $scope.addToOrders = function addT(index){
-        if($rootScope.ordered[index] == null){
+        if( !$scope.isInOrders($scope.pizzas[index].title)){
             $rootScope.ordered.push($scope.pizzas[index]);
             $rootScope.totalSum += $scope.pizzas[index].price;
         }
         else {
-            $rootScope.ordered[index].quantity++;
+            $scope.findInOrders($scope.pizzas[index].title).quantity++;
             $rootScope.totalSum += $scope.pizzas[index].price;
         }
 

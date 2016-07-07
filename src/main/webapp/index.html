@@ -2430,6 +2430,7 @@
     <style type="text/css"></style>
 </head>
 <body bgcolor="#000" style="background-color:#000;" class="redhlp_online redhlp_ready" ng-app="Content">
+
 <div id="rh-snippet" style="position: static; -webkit-user-select: none;"
      class="rh-left rh-reset redhlp_stateOnline rh-stateOnline">
     <div id="rh-settings" style="display: none;" class="rh-reset"></div>
@@ -2617,7 +2618,7 @@
         <div class="holder">
             <div class="logo logo_ru">
 
-                <a href="http://mafia.ua/">семейные ценности Mafia итальянская кухня</a>
+                <a href="">семейные ценности Mafia итальянская кухня</a>
             </div>
 
             <div class="col1">
@@ -2639,25 +2640,6 @@
 
         <div class="cart1">
             <div class="cart2">
-
-                <!--    <div class="cart3-bg cart3-bg-shop"></div>
-                    <div class="cart3 cart3shop">
-                        <p class="h2">Ваш заказ</p>
-
-
-                        <div id="cart_inline"><p>
-
-                            Ничего не заказано
-                            <ul ng-controller="myCtrl">
-                            <li ng-repeat="pizza in ordered track by ">
-                                <p>{{pizza.title}}</p>
-                            </li>
-                        </ul>
-
-                        </p></div>
-
-                    </div>
-    -->
             </div>
         </div>
 
@@ -2665,7 +2647,7 @@
         <ul id="nav">
 
             <li class="active">
-                <a href="http://mafia.ua/kiev/menu-dostavki/italian/"><span>Итальянская кухня</span></a>
+                <a href=""><span>Итальянская кухня</span></a>
             </li>
 
 
@@ -2673,28 +2655,10 @@
         <ul class="sub-nav">
 
             <li class="active">
-                <a href="http://mafia.ua/kiev/menu-dostavki/italian/pizza/index.html"><span>Пицца</span></a>
+                <a href=""><span>Пицца</span></a>
             </li>
 
-            <li>
-                <a href="http://mafia.ua/kiev/menu-dostavki/italian/pasta/"><span>Паста</span></a>
-            </li>
 
-            <li>
-                <a href="http://mafia.ua/kiev/menu-dostavki/italian/salaty/"><span>Салаты</span></a>
-            </li>
-
-            <li>
-                <a href="http://mafia.ua/kiev/menu-dostavki/italian/supy/"><span>Супы</span></a>
-            </li>
-
-            <li>
-                <a href="http://mafia.ua/kiev/menu-dostavki/italian/goryachie-blyuda/"><span>Горячие блюда</span></a>
-            </li>
-
-            <li>
-                <a href="http://mafia.ua/kiev/menu-dostavki/italian/deserty/"><span>Десерты</span></a>
-            </li>
 
         </ul>
 
@@ -2703,6 +2667,10 @@
     <!-- header end -->
 
     <div id="main" class="">
+
+        <div class="p_menu">
+
+        </div>
         <div class="top-main">
 
             <div class="col-l">
@@ -2729,7 +2697,7 @@
                                 <div class="holder">
                                     <div class="frame">
                                         <div class="selected_item">
-                                            <a href="http://mafia.ua/kiev/menu-dostavki/italian/pizza/#index.html"
+                                            <a href=""
                                                rel="drop_link">по популярности</a>
                                         </div>
                                         <div class="content">
@@ -2879,7 +2847,10 @@
                     </div>
                 </div>
 
-
+                <div class="pager">
+                    <input type="button" value="prev" ng-click="previous()"/>
+                    <input type="button" value="next" ng-click="next()"/>
+                </div>
                 <div class="item-list" ng-controller="myCtrl">
 
 
@@ -2915,724 +2886,16 @@
                                 <strong class="price">{{pizza.price}} <span>грн.</span></strong>
 
 
-                                <a class="btn-add2" ng-click="addToOrders($index)">Добавить
+                                <a class="btn-add2" href="" ng-click="addToOrders($index)">Добавить
                                     к заказу</a>
                             </div>
                         </div>
                     </div>
 
-                    <!--
-
-                                        <div class="item">
-                                            <div class="img rel">
-                                                <a class="name" href="http://mafia.ua/kiev/menu-dostavki/italian/pizza/picca-ot-shefa/">
-                                                    <img src="./pizza_files/picca-ot-shefa.png" alt="Пицца от шефа" title="Пицца от шефа">
-
-                                                    <img class="overlay" src="pizza_files/leybanew200x200px_3.png"
-                                                         alt="NEW Пицца от шефа">
-
-                                                    <img class="overlay" src="pizza_files/label-stagioni-200.png"
-                                                         alt="Stagioni Пицца от шефа">
-
-                                                </a>
-                                            </div>
-                                            <div class="info">
-                                                <a class="name" href="http://mafia.ua/kiev/menu-dostavki/italian/pizza/picca-ot-shefa/">Пицца
-                                                    от шефа</a>
-
-                                                <p>Хамон, помидоры черри, пармезан, маскарпоне, моцарелла, сливки, руккола, орегано, соус
-                                                    Pomodoro.</p>
-
-                                                <div class="footer">
-                                                    <div class="features">
-
-                                                        <span class="wt">450 <span>г.</span></span>
-
-
-                                                    </div>
-                                                    <strong class="price">129 <span>грн.</span></strong>
-
-
-                                                    <a class="btn-add2" href="http://mafia.ua/kiev/menu-dostavki/add_to_cart/3912/">Добавить
-                                                        к заказу</a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-                                        <div class="item">
-                                            <div class="img rel">
-                                                <a class="name" href="http://mafia.ua/kiev/menu-dostavki/italian/pizza/italyani/">
-                                                    <img src="./pizza_files/italyani.jpg" alt="Итальяно" title="Итальяно">
-
-                                                    <img class="overlay" src="./pizza_files/leybaaction200x200px_3.png"
-                                                         alt="Акция! Итальяно">
-
-                                                    <img class="overlay" src="./pizza_files/label-stagioni-200.png" alt="Stagioni Итальяно">
-
-                                                </a>
-                                            </div>
-                                            <div class="info">
-                                                <a class="name"
-                                                   href="http://mafia.ua/kiev/menu-dostavki/italian/pizza/italyani/">Итальяно</a>
-
-                                                <p>Куриное филе, шампиньоны, помидоры, сладкий перец, моцарелла, петрушка, орегано, соус
-                                                    Pomodoro.<br>*Акционное предложение, скидки не предоставляются.<br>**При использовании
-                                                    скидки «заказ с собой» напиток в подарок не предоставляется.</p>
-
-                                                <div class="footer">
-                                                    <div class="features">
-
-                                                        <span class="wt">1330 <span>г.</span></span>
-
-
-                                                    </div>
-                                                    <strong class="price">199 <span>грн.</span></strong>
-
-
-                                                    <div class="gift">
-                                                        <b>+</b> <img src="./pizza_files/sidrshampanskoe-kiev_1.png">
-
-                                                        <div>напиток в подарок</div>
-                                                    </div>
-
-
-                                                    <a class="btn-add2" href="http://mafia.ua/kiev/menu-dostavki/add_to_cart/3865/">Добавить
-                                                        к заказу</a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-                                        <div class="item">
-                                            <div class="img rel">
-                                                <a class="name"
-                                                   href="http://mafia.ua/kiev/menu-dostavki/italian/pizza/pepperoni-metrovaya/">
-                                                    <img src="./pizza_files/pepperoni-metrovaya_1.jpg" alt="Пепперони  метровая"
-                                                         title="Пепперони  метровая">
-
-                                                    <img class="overlay" src="./pizza_files/leybanew200x200px_3.png"
-                                                         alt="NEW Пепперони  метровая">
-
-                                                    <img class="overlay" src="./pizza_files/label-stagioni-200.png"
-                                                         alt="Stagioni Пепперони  метровая">
-
-                                                </a>
-                                            </div>
-                                            <div class="info">
-                                                <a class="name"
-                                                   href="http://mafia.ua/kiev/menu-dostavki/italian/pizza/pepperoni-metrovaya/">Пепперони
-                                                    метровая</a>
-
-                                                <p>Салями пепперони, помидоры черри, моцарелла, орегано, перец пепперони, соус Pomodoro.</p>
-
-                                                <div class="footer">
-                                                    <div class="features">
-
-                                                        <span class="wt">990 <span>г.</span></span>
-
-
-                                                    </div>
-                                                    <strong class="price">249 <span>грн.</span></strong>
-
-
-                                                    <div class="gift">
-                                                        <b>+</b> <img src="./pizza_files/podarki-k-pitstse-kiev_1.png">
-
-                                                        <div>Вино в подарок 0,5л</div>
-                                                    </div>
-
-
-                                                    <a class="btn-add2" href="http://mafia.ua/kiev/menu-dostavki/add_to_cart/3843/">Добавить
-                                                        к заказу</a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-                                        <div class="item">
-                                            <div class="img rel">
-                                                <a class="name" href="http://mafia.ua/kiev/menu-dostavki/italian/pizza/picca-het-trik/">
-                                                    <img src="./pizza_files/picca-het-trik.jpg" alt="Пицца Хет Трик" title="Пицца Хет Трик">
-
-                                                    <img class="overlay" src="./pizza_files/label-stagioni-200.png"
-                                                         alt="Stagioni Пицца Хет Трик">
-
-                                                    <img class="overlay" src="./pizza_files/leyba-football-hits200x200px_2.png"
-                                                         alt="Футбольный хит Пицца Хет Трик">
-
-                                                </a>
-                                            </div>
-                                            <div class="info">
-                                                <a class="name" href="http://mafia.ua/kiev/menu-dostavki/italian/pizza/picca-het-trik/">Пицца
-                                                    Хет Трик</a>
-
-                                                <p>Охотничьи колбаски, салями, помидоры, моцарелла, сладкий лук, чеснок, орегано, петрушка,
-                                                    соусы Pomodoro и BBQ.<br>*Акционное предложение, скидки не предоставляются.</p>
-
-                                                <div class="footer">
-                                                    <div class="features">
-
-                                                        <span class="wt">1130 <span>г.</span></span>
-
-
-                                                    </div>
-                                                    <strong class="price">229 <span>грн.</span></strong>
-
-
-                                                    <div class="gift">
-                                                        <b>+</b> <img src="./pizza_files/pepsi-futbolnyie-hityi_1.png">
-
-                                                        <div>+ Pepsi в подарок</div>
-                                                    </div>
-
-
-                                                    <a class="btn-add2" href="http://mafia.ua/kiev/menu-dostavki/add_to_cart/3882/">Добавить
-                                                        к заказу</a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-                                        <div class="item">
-                                            <div class="img rel">
-                                                <a class="name" href="http://mafia.ua/kiev/menu-dostavki/italian/pizza/bbq-metrovaya/">
-                                                    <img src="./pizza_files/bbq-metrovaya.jpg" alt="BBQ метровая" title="BBQ метровая">
-
-                                                    <img class="overlay" src="./pizza_files/leybanew200x200px_3.png" alt="NEW BBQ метровая">
-
-                                                    <img class="overlay" src="./pizza_files/label-stagioni-200.png"
-                                                         alt="Stagioni BBQ метровая">
-
-                                                </a>
-                                            </div>
-                                            <div class="info">
-                                                <a class="name" href="http://mafia.ua/kiev/menu-dostavki/italian/pizza/bbq-metrovaya/">BBQ
-                                                    метровая</a>
-
-                                                <p>Грудинка копченая, куриное филе sous-vide, шампиньоны, моцарелла, орегано, томат, перец
-                                                    чили, базилик, соус Pomodoro.</p>
-
-                                                <div class="footer">
-                                                    <div class="features">
-
-                                                        <span class="wt">1310 <span>г.</span></span>
-
-
-                                                    </div>
-                                                    <strong class="price">259 <span>грн.</span></strong>
-
-
-                                                    <div class="gift">
-                                                        <b>+</b> <img src="./pizza_files/podarki-k-pitstse-kiev_1.png">
-
-                                                        <div>Вино в подарок 0,5л</div>
-                                                    </div>
-
-
-                                                    <a class="btn-add2" href="http://mafia.ua/kiev/menu-dostavki/add_to_cart/3844/">Добавить
-                                                        к заказу</a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-                                        <div class="item">
-                                            <div class="img rel">
-                                                <a class="name" href="http://mafia.ua/kiev/menu-dostavki/italian/pizza/kampanya-metrovaya/">
-                                                    <img src="./pizza_files/kampanya-metrovaya.jpg" alt="Кампанья метровая"
-                                                         title="Кампанья метровая">
-
-                                                    <img class="overlay" src="./pizza_files/label-stagioni-200.png"
-                                                         alt="Stagioni Кампанья метровая">
-
-                                                    <img class="overlay" src="./pizza_files/leybanew200x200px_3.png"
-                                                         alt="NEW Кампанья метровая">
-
-                                                </a>
-                                            </div>
-                                            <div class="info">
-                                                <a class="name" href="http://mafia.ua/kiev/menu-dostavki/italian/pizza/kampanya-metrovaya/">Кампанья
-                                                    метровая</a>
-
-                                                <p>Охотничьи колбаски, ветчина, салями пепперони, куриное филе sous-vide, шампиньоны,
-                                                    моцарелла, томаты, орегано, вяленый помидор, руккола, оливки, соус Pomodoro.</p>
-
-                                                <div class="footer">
-                                                    <div class="features">
-
-                                                        <span class="wt">1230 <span>г.</span></span>
-
-
-                                                    </div>
-                                                    <strong class="price">249 <span>грн.</span></strong>
-
-
-                                                    <div class="gift">
-                                                        <b>+</b> <img src="./pizza_files/podarki-k-pitstse-kiev_1.png">
-
-                                                        <div>Вино в подарок 0,5л</div>
-                                                    </div>
-
-
-                                                    <a class="btn-add2" href="http://mafia.ua/kiev/menu-dostavki/add_to_cart/3061/">Добавить
-                                                        к заказу</a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-                                        <div class="item">
-                                            <div class="img rel">
-                                                <a class="name"
-                                                   href="http://mafia.ua/kiev/menu-dostavki/italian/pizza/karbonara-metrovaya-2/">
-                                                    <img src="./pizza_files/karbonara-metrovaya.jpg" alt="Карбонара метровая"
-                                                         title="Карбонара метровая">
-
-                                                    <img class="overlay" src="./pizza_files/leybanew200x200px_3.png"
-                                                         alt="NEW Карбонара метровая">
-
-                                                    <img class="overlay" src="./pizza_files/label-stagioni-200.png"
-                                                         alt="Stagioni Карбонара метровая">
-
-                                                </a>
-                                            </div>
-                                            <div class="info">
-                                                <a class="name"
-                                                   href="http://mafia.ua/kiev/menu-dostavki/italian/pizza/karbonara-metrovaya-2/">Карбонара
-                                                    метровая</a>
-
-                                                <p>Ветчина, шампиньоны, моцарелла, томаты, яйцо перепелиное, смесь перцев, пармезан, соус
-                                                    Carbonara.</p>
-
-                                                <div class="footer">
-                                                    <div class="features">
-
-                                                        <span class="wt">1180 <span>г.</span></span>
-
-
-                                                    </div>
-                                                    <strong class="price">239 <span>грн.</span></strong>
-
-
-                                                    <div class="gift">
-                                                        <b>+</b> <img src="./pizza_files/podarki-k-pitstse-kiev_1.png">
-
-                                                        <div>Вино в подарок 0,5л</div>
-                                                    </div>
-
-
-                                                    <a class="btn-add2" href="http://mafia.ua/kiev/menu-dostavki/add_to_cart/3062/">Добавить
-                                                        к заказу</a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                    -->
-
-                    <!--            <div class="item">
-                                    <div class="img rel">
-                                        <a class="name"
-                                           href="http://mafia.ua/kiev/menu-dostavki/italian/pizza/stadzhioni-metrovaya/">
-                                            <img src="./pizza_files/stadzhioni-metrovaya.jpg" alt="Стаджиони метровая"
-                                                 title="Стаджиони метровая">
-
-                                            <img class="overlay" src="./pizza_files/leybanew200x200px_3.png"
-                                                 alt="NEW Стаджиони метровая">
-
-                                            <img class="overlay" src="./pizza_files/label-stagioni-200.png"
-                                                 alt="Stagioni Стаджиони метровая">
-
-                                        </a>
-                                    </div>
-                                    <div class="info">
-                                        <a class="name"
-                                           href="http://mafia.ua/kiev/menu-dostavki/italian/pizza/stadzhioni-metrovaya/">Стаджиони
-                                            метровая</a>
-
-                                        <p>Охотничьи колбаски, куриное филе sous-vide, салями пеперони, шампиньоны, сладкий перец,
-                                            томаты, баклажан запеченный, моцарелла, лук, орегано, петрушка, соус Pomodoro.</p>
-
-                                        <div class="footer">
-                                            <div class="features">
-
-                                                <span class="wt">1155 <span>г.</span></span>
-
-
-                                            </div>
-                                            <strong class="price">229 <span>грн.</span></strong>
-
-
-                                            <div class="gift">
-                                                <b>+</b> <img src="./pizza_files/podarki-k-pitstse-kiev_1.png">
-
-                                                <div>Вино в подарок 0,5л</div>
-                                            </div>
-
-
-                                            <a class="btn-add2" href="http://mafia.ua/kiev/menu-dostavki/add_to_cart/3842/">Добавить
-                                                к заказу</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="item">
-                                    <div class="img rel">
-                                        <a class="name" href="http://mafia.ua/kiev/menu-dostavki/italian/pizza/liguriya-metrovaya/">
-                                            <img src="./pizza_files/liguriya-metrovaya.jpg" alt="Лигурия метровая"
-                                                 title="Лигурия метровая">
-
-                                            <img class="overlay" src="./pizza_files/leybanew200x200px_3.png"
-                                                 alt="NEW Лигурия метровая">
-
-                                            <img class="overlay" src="./pizza_files/label-stagioni-200.png"
-                                                 alt="Stagioni Лигурия метровая">
-
-                                        </a>
-                                    </div>
-                                    <div class="info">
-                                        <a class="name" href="http://mafia.ua/kiev/menu-dostavki/italian/pizza/liguriya-metrovaya/">Лигурия
-                                            метровая</a>
-
-                                        <p>Куриное филе sous-vide, сладкий перец, моцарелла, томаты, лук, орегано, соус
-                                            Pomodoro.</p>
-
-                                        <div class="footer">
-                                            <div class="features">
-
-                                                <span class="wt">1280 <span>г.</span></span>
-
-
-                                            </div>
-                                            <strong class="price">199 <span>грн.</span></strong>
-
-
-                                            <div class="gift">
-                                                <b>+</b> <img src="./pizza_files/podarki-k-pitstse-kiev_1.png">
-
-                                                <div>Вино в подарок 0,5л</div>
-                                            </div>
-
-
-                                            <a class="btn-add2" href="http://mafia.ua/kiev/menu-dostavki/add_to_cart/3064/">Добавить
-                                                к заказу</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="item">
-                                    <div class="img rel">
-                                        <a class="name" href="http://mafia.ua/kiev/menu-dostavki/italian/pizza/berluskoni/">
-                                            <img src="./pizza_files/berluskoni.jpg" alt="Берлускони" title="Берлускони">
-
-                                            <img class="overlay" src="./pizza_files/leybanew200x200px_3.png" alt="NEW Берлускони">
-
-                                            <img class="overlay" src="./pizza_files/label-stagioni-200.png"
-                                                 alt="Stagioni Берлускони">
-
-                                        </a>
-                                    </div>
-                                    <div class="info">
-                                        <a class="name" href="http://mafia.ua/kiev/menu-dostavki/italian/pizza/berluskoni/">Берлускони</a>
-
-                                        <p>Сливочный соус из белых грибов и шампиньонов с трюфельным маслом, моцарелла, дор блю,
-                                            орегано.</p>
-
-                                        <div class="footer">
-                                            <div class="features">
-
-                                                <span class="wt">390 <span>г.</span></span>
-
-
-                                            </div>
-                                            <strong class="price">109 <span>грн.</span></strong>
-
-
-                                            <a class="btn-add2" href="http://mafia.ua/kiev/menu-dostavki/add_to_cart/2493/">Добавить
-                                                к заказу</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="item">
-                                    <div class="img rel">
-                                        <a class="name" href="http://mafia.ua/kiev/menu-dostavki/italian/pizza/gurmeo/">
-                                            <img src="./pizza_files/gurmeo.jpg" alt="Гурмео" title="Гурмео">
-
-                                            <img class="overlay" src="./pizza_files/leybanew200x200px_3.png" alt="NEW Гурмео">
-
-                                            <img class="overlay" src="./pizza_files/label-stagioni-200.png" alt="Stagioni Гурмео">
-
-                                        </a>
-                                    </div>
-                                    <div class="info">
-                                        <a class="name" href="http://mafia.ua/kiev/menu-dostavki/italian/pizza/gurmeo/">Гурмео</a>
-
-                                        <p>Охотничьи колбаски, салями пепперони, ветчина, куриное филе sous-vide, шампиньоны,
-                                            орегано, соус BBQ.</p>
-
-                                        <div class="footer">
-                                            <div class="features">
-
-                                                <span class="wt">340 <span>г.</span></span>
-
-
-                                            </div>
-                                            <strong class="price">109 <span>грн.</span></strong>
-
-
-                                            <a class="btn-add2" href="http://mafia.ua/kiev/menu-dostavki/add_to_cart/3846/">Добавить
-                                                к заказу</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="item">
-                                    <div class="img rel">
-                                        <a class="name" href="http://mafia.ua/kiev/menu-dostavki/italian/pizza/karbonara-3/">
-                                            <img src="./pizza_files/karbonara.jpg" alt="Карбонара" title="Карбонара">
-
-                                            <img class="overlay" src="./pizza_files/leybanew200x200px_3.png" alt="NEW Карбонара">
-
-                                            <img class="overlay" src="./pizza_files/label-stagioni-200.png"
-                                                 alt="Stagioni Карбонара">
-
-                                        </a>
-                                    </div>
-                                    <div class="info">
-                                        <a class="name" href="http://mafia.ua/kiev/menu-dostavki/italian/pizza/karbonara-3/">Карбонара</a>
-
-                                        <p>Ветчина, шампиньоны, пармезан, моцарелла, томаты, яйцо перепелиное, смесь перцев, соус
-                                            Carbonara.</p>
-
-                                        <div class="footer">
-                                            <div class="features">
-
-                                                <span class="wt">400 <span>г.</span></span>
-
-
-                                            </div>
-                                            <strong class="price">99 <span>грн.</span></strong>
-
-
-                                            <a class="btn-add2" href="http://mafia.ua/kiev/menu-dostavki/add_to_cart/3063/">Добавить
-                                                к заказу</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-            -->
-                    <!--
-                                        <div class="item">
-                                            <div class="img rel">
-                                                <a class="name" href="http://mafia.ua/kiev/menu-dostavki/italian/pizza/pepperoni-2/">
-                                                    <img src="./pizza_files/pepperoni_1.jpg" alt="Пепперони" title="Пепперони">
-
-                                                    <img class="overlay" src="./pizza_files/label-stagioni-200.png"
-                                                         alt="Stagioni Пепперони">
-
-                                                    <img class="overlay" src="./pizza_files/leybanew200x200px_3.png" alt="NEW Пепперони">
-
-                                                </a>
-                                            </div>
-                                            <div class="info">
-                                                <a class="name" href="http://mafia.ua/kiev/menu-dostavki/italian/pizza/pepperoni-2/">Пепперони</a>
-
-                                                <p>Салями пепперони, моцарелла, орегано, перец пепперони, соус Pomodoro.</p>
-
-                                                <div class="footer">
-                                                    <div class="features">
-
-                                                        <span class="wt">360 <span>г.</span></span>
-
-
-                                                    </div>
-                                                    <strong class="price">99 <span>грн.</span></strong>
-
-
-                                                    <a class="btn-add2" href="http://mafia.ua/kiev/menu-dostavki/add_to_cart/3847/">Добавить
-                                                        к заказу</a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-                                        <div class="item">
-                                            <div class="img rel">
-                                                <a class="name" href="http://mafia.ua/kiev/menu-dostavki/italian/pizza/chetyre-syra/">
-                                                    <img src="./pizza_files/chetyre-syra.jpg" alt="Четыре сыра" title="Четыре сыра">
-
-                                                    <img class="overlay" src="./pizza_files/leybanew200x200px_3.png" alt="NEW Четыре сыра">
-
-                                                    <img class="overlay" src="./pizza_files/label-stagioni-200.png"
-                                                         alt="Stagioni Четыре сыра">
-
-                                                </a>
-                                            </div>
-                                            <div class="info">
-                                                <a class="name" href="http://mafia.ua/kiev/menu-dostavki/italian/pizza/chetyre-syra/">Четыре
-                                                    сыра</a>
-
-                                                <p>Пармезан, дор блю, чеддер, моцарелла, груша, грецкий орех, соус сливочный.</p>
-
-                                                <div class="footer">
-                                                    <div class="features">
-
-                                                        <span class="wt">340 <span>г.</span></span>
-
-
-                                                    </div>
-                                                    <strong class="price">99 <span>грн.</span></strong>
-
-
-                                                    <a class="btn-add2" href="http://mafia.ua/kiev/menu-dostavki/add_to_cart/3066/">Добавить
-                                                        к заказу</a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-                                        <div class="item">
-                                            <div class="img rel">
-                                                <a class="name" href="http://mafia.ua/kiev/menu-dostavki/italian/pizza/vegetariano/">
-                                                    <img src="./pizza_files/vegetariano.jpg" alt="Вегетариано" title="Вегетариано">
-
-                                                    <img class="overlay" src="./pizza_files/leybanew200x200px_3.png" alt="NEW Вегетариано">
-
-                                                    <img class="overlay" src="./pizza_files/label-stagioni-200.png"
-                                                         alt="Stagioni Вегетариано">
-
-                                                </a>
-                                            </div>
-                                            <div class="info">
-                                                <a class="name" href="http://mafia.ua/kiev/menu-dostavki/italian/pizza/vegetariano/">Вегетариано</a>
-
-                                                <p>Брокколи, баклажан, сладкий перец, томаты, моцарелла, перец чили, орегано, соус
-                                                    сливочно-сырный.<br></p>
-
-                                                <div class="footer">
-                                                    <div class="features">
-
-                                                        <span class="wt">450 <span>г.</span></span>
-
-
-                                                    </div>
-                                                    <strong class="price">89 <span>грн.</span></strong>
-
-
-                                                    <a class="btn-add2" href="http://mafia.ua/kiev/menu-dostavki/add_to_cart/3845/">Добавить
-                                                        к заказу</a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-                                        <div class="item">
-                                            <div class="img rel">
-                                                <a class="name" href="http://mafia.ua/kiev/menu-dostavki/italian/pizza/pollo/">
-                                                    <img src="./pizza_files/pollo.jpg" alt="Полло" title="Полло">
-
-                                                    <img class="overlay" src="./pizza_files/leybanew200x200px_3.png" alt="NEW Полло">
-
-                                                    <img class="overlay" src="./pizza_files/label-stagioni-200.png" alt="Stagioni Полло">
-
-                                                </a>
-                                            </div>
-                                            <div class="info">
-                                                <a class="name" href="http://mafia.ua/kiev/menu-dostavki/italian/pizza/pollo/">Полло</a>
-
-                                                <p>Куриное филе sous-vide, ананас, моцарелла, орегано, перец чили, соус Pomodoro.</p>
-
-                                                <div class="footer">
-                                                    <div class="features">
-
-                                                        <span class="wt">440 <span>г.</span></span>
-
-
-                                                    </div>
-                                                    <strong class="price">79 <span>грн.</span></strong>
-
-
-                                                    <a class="btn-add2" href="http://mafia.ua/kiev/menu-dostavki/add_to_cart/1933/">Добавить
-                                                        к заказу</a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-                                        <div class="item">
-                                            <div class="img rel">
-                                                <a class="name" href="http://mafia.ua/kiev/menu-dostavki/italian/pizza/margarita/">
-                                                    <img src="./pizza_files/margarita.jpg" alt="Маргарита" title="Маргарита">
-
-                                                    <img class="overlay" src="./pizza_files/label-stagioni-200.png"
-                                                         alt="Stagioni Маргарита">
-
-                                                </a>
-                                            </div>
-                                            <div class="info">
-                                                <a class="name"
-                                                   href="http://mafia.ua/kiev/menu-dostavki/italian/pizza/margarita/">Маргарита</a>
-
-                                                <p>Томаты, моцарелла, орегано, базилик, соус Pomodoro.</p>
-
-                                                <div class="footer">
-                                                    <div class="features">
-
-                                                        <span class="wt">360 <span>г.</span></span>
-
-
-                                                    </div>
-                                                    <strong class="price">59 <span>грн.</span></strong>
-
-
-                                                    <a class="btn-add2" href="http://mafia.ua/kiev/menu-dostavki/add_to_cart/1929/">Добавить
-                                                        к заказу</a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                    -->
-                    <!--
-                                        <div class="item">
-                                            <div class="img rel">
-                                                <a class="name" href="http://mafia.ua/kiev/menu-dostavki/italian/pizza/kalcone/">
-                                                    <img src="./pizza_files/kalcone.jpg" alt="Кальцоне" title="Кальцоне">
-
-                                                    <img class="overlay" src="./pizza_files/label-stagioni-200.png" alt="Stagioni Кальцоне">
-
-                                                    <img class="overlay" src="./pizza_files/leybanew200x200px_3.png" alt="NEW Кальцоне">
-
-                                                </a>
-                                            </div>
-                                            <div class="info">
-                                                <a class="name"
-                                                   href="http://mafia.ua/kiev/menu-dostavki/italian/pizza/kalcone/">Кальцоне</a>
-
-                                                <p>Ветчина, шампиньоны, дор блю, моцарелла, томаты, орегано.</p>
-
-                                                <div class="footer">
-                                                    <div class="features">
-
-                                                        <span class="wt">420 <span>г.</span></span>
-
-
-                                                    </div>
-                                                    <strong class="price">89 <span>грн.</span></strong>
-
-
-                                                    <a class="btn-add2" href="http://mafia.ua/kiev/menu-dostavki/add_to_cart/2505/">Добавить
-                                                        к заказу</a>
-                                                </div>
-                                            </div>
-                                        </div>-->
 
 
                 </div>
+
 
 
                 <div class="seotext"><font color="black"><br><br><br>
@@ -3747,9 +3010,18 @@
                                         <em>грн.</em><br>
                                     </strong>
 
+                                    <script >
 
+                                        function menuSwitch(){
+                                            $(".btn-order").click(function(){
+                                                alert('on toggle');
+                                                $(".item-list").toggle(100);
+                                            });
+                                        }
+                                        $(document).ready(menuSwitch);
+                                    </script>
                                     <div class="take-with">
-                                        <a class="btn-order" href="" rel="facebox">Заказать
+                                        <a class="btn-order"  href="" rel="facebox">Заказать
                                             доставку</a>
                                     </div>
 
@@ -3761,6 +3033,7 @@
                         </div>
                     </div>
                 </div>
+
 
 
                 <!--<div class="recommendations">-->
