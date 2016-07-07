@@ -91,8 +91,12 @@ angular.module('Content')
             }
         }
         return null;
-    }
+    };
     $scope.addToOrders = function addT(index){
+        var item = {
+            pizza:$scope.pizzas[index],
+            quantity:1
+        };
         if( !$scope.isInOrders($scope.pizzas[index].title)){
             $rootScope.ordered.push($scope.pizzas[index]);
             $rootScope.totalSum += $scope.pizzas[index].price;
@@ -102,13 +106,13 @@ angular.module('Content')
             $rootScope.totalSum += $scope.pizzas[index].price;
         }
 
-    }
+    };
         $rootScope.changeOrderQuantity = function(index) {
 
             var sum = 0;
             $rootScope.ordered.forEach(function(p){
                 sum += p.price * p.quantity;
-            })
+            });
             $rootScope.totalSum = sum;
         }
 

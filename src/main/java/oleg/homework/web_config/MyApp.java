@@ -1,9 +1,8 @@
 package oleg.homework.web_config;
 
 
-import oleg.homework.order.Order;
-import oleg.homework.order.OrderRepository;
-import oleg.homework.pizza.PizzaRepository;
+import oleg.homework.domain.order.OrderRepository;
+import oleg.homework.domain.pizza.PizzaRepository;
 import org.glassfish.hk2.utilities.binding.AbstractBinder;
 import org.glassfish.jersey.server.ResourceConfig;
 
