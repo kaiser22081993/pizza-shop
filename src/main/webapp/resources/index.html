@@ -2942,12 +2942,12 @@
                             <!-- корзина с заказами. правая боковая панель -->
                             <div id="cart">
 
-                                <div id="line2578009"  ng-repeat="pizza in ordered track by $index">
+                                <div id="line2578009"  ng-repeat="item in ordered track by $index">
                                     <div class="line">
                                         <h3>
 
                                             <a href="http://mafia.ua/kiev/menu-dostavki/napitki/soki/apelsin/">
-                                                {{pizza.title}}
+                                                {{item.pizza.title}}
                                             </a>
 
                                         </h3>
@@ -2973,7 +2973,7 @@
 
                                                     </div>
                                                     <b>x</b>
-                                                    <label for="lbl2578009">{{pizza.price}}</label>
+                                                    <label for="lbl2578009">{{item.pizza.price}}</label>
                                                 </fieldset>
                                             </form>
                                         </div>

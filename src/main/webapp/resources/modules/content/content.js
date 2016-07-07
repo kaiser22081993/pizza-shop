@@ -78,7 +78,7 @@ angular.module('Content')
     };
     $scope.isInOrders = function(title) {
         for(var i = 0; i < $rootScope.ordered.length; i++){
-            if($rootScope.ordered[i].title === title){
+            if($rootScope.ordered[i].pizza.title === title){
                 return true;
             }
         }
@@ -86,8 +86,8 @@ angular.module('Content')
     };
     $scope.findInOrders = function(title){
         for(var i = 0; i < $rootScope.ordered.length; i++){
-            if($rootScope.ordered[i].title === title){
-                return $rootScope.ordered[i];
+            if($rootScope.ordered[i].pizza.title === title){
+                return $rootScope.ordered[i].pizza;
             }
         }
         return null;
@@ -98,12 +98,12 @@ angular.module('Content')
             quantity:1
         };
         if( !$scope.isInOrders($scope.pizzas[index].title)){
-            $rootScope.ordered.push($scope.pizzas[index]);
-            $rootScope.totalSum += $scope.pizzas[index].price;
+            $rootScope.ordered.push(item);
+            $rootScope.totalSum += item.pizza.price;
         }
         else {
-            $scope.findInOrders($scope.pizzas[index].title).quantity++;
-            $rootScope.totalSum += $scope.pizzas[index].price;
+            $scope.findInOrders(item.pizza.title).quantity++;
+            $rootScope.totalSum += item.pizza.price;
         }
 
     };
@@ -111,7 +111,7 @@ angular.module('Content')
 
             var sum = 0;
             $rootScope.ordered.forEach(function(p){
-                sum += p.price * p.quantity;
+                sum += p.pizza.price * p.pizza.quantity;
             });
             $rootScope.totalSum = sum;
         }
