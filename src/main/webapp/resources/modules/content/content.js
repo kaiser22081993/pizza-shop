@@ -1,7 +1,7 @@
 
 
-var nextUrl = "http://localhost:8080/pizza-shop/rest/pizza";
-var prevUrl = "http://localhost:8080/pizza-shop/rest/pizza";
+var nextUrl = "rest/pizza";
+var prevUrl = "rest/pizza";
 angular.module('Content')
 .controller('myCtrl',function ($scope, $http, $rootScope ) {
     console.log("next ----");
@@ -102,7 +102,6 @@ angular.module('Content')
             $rootScope.totalSum += item.pizza.price;
         }
         else {
-            alert('++');
             $scope.findInOrders(item.pizza.title).quantity++;
             $rootScope.totalSum += item.pizza.price;
         }

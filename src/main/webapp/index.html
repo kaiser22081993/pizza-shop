@@ -2851,7 +2851,9 @@
                     <input type="button" value="prev" ng-click="previous()"/>
                     <input type="button" value="next" ng-click="next()"/>
                 </div>
+
                 <div class="item-list" ng-controller="myCtrl">
+
 
 
                     <div class="item" ng-repeat="pizza in pizzas track by $index">
@@ -3013,15 +3015,31 @@
                                     <script >
 
                                         function menuSwitch(){
+
                                             $(".btn-order").click(function(){
                                                 alert('on toggle');
-                                                $(".item-list").toggle(100);
+                                                $(".order-menu").toggle(100);
                                             });
                                         }
                                         $(document).ready(menuSwitch);
                                     </script>
+
                                     <div class="take-with">
-                                        <a class="btn-order"  href="" rel="facebox">Заказать
+                                        <style>
+                                            .order-menu {
+                                                padding: 15px;
+                                                border: 1px solid black;
+                                            }
+                                        </style>
+                                        <div class="order-menu" >
+
+                                            <p>Имя</p> <input size="25" value="Имя"/><br>
+                                            <p>Адрес</p> <input size="25" value="Адрес"/><br>
+                                            <p>Телефон</p> <input size="25" value="Телефон"/><br>
+
+
+                                        </div>
+                                        <a class="btn-order" ng-click="makeOrder()"  href="" rel="facebox">Заказать
                                             доставку</a>
                                     </div>
 
