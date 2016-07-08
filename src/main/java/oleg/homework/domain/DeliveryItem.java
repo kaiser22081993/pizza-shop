@@ -7,16 +7,16 @@ import java.util.List;
 public class DeliveryItem {
 
     private int id;
-    private Order order;
+    private Pizza pizza;
     private int quantity;
 
 
-    public Order getOrder() {
-        return order;
+    public Pizza getPizza() {
+        return pizza;
     }
 
-    public void setOrder(Order order) {
-        this.order = order;
+    public void setPizza(Pizza pizza) {
+        this.pizza = pizza;
     }
 
     public int getId() {

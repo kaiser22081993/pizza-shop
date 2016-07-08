@@ -87,7 +87,7 @@ angular.module('Content')
     $scope.findInOrders = function(title){
         for(var i = 0; i < $rootScope.ordered.length; i++){
             if($rootScope.ordered[i].pizza.title === title){
-                return $rootScope.ordered[i].pizza;
+                return $rootScope.ordered[i];
             }
         }
         return null;
@@ -102,6 +102,7 @@ angular.module('Content')
             $rootScope.totalSum += item.pizza.price;
         }
         else {
+            alert('++');
             $scope.findInOrders(item.pizza.title).quantity++;
             $rootScope.totalSum += item.pizza.price;
         }
@@ -111,7 +112,7 @@ angular.module('Content')
 
             var sum = 0;
             $rootScope.ordered.forEach(function(p){
-                sum += p.pizza.price * p.pizza.quantity;
+                sum += p.pizza.price * p.quantity;
             });
             $rootScope.totalSum = sum;
         }

@@ -20,12 +20,12 @@ angular.module('BasicHttpAuthExample', [
         .when('/login', {
 
             controller: 'LoginController',
-            templateUrl: 'modules/authentication/views/login.html'
+            templateUrl: 'resources/modules/authentication/views/login.html'
         })
 
         .when('/', {
             controller: 'HomeController',
-            templateUrl: 'modules/home/views/home.html'
+            templateUrl: 'resources/modules/home/views/home.html'
         })
 
         .otherwise({ redirectTo: '/login' });

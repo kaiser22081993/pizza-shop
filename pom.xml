@@ -75,7 +75,7 @@
                     <url>http://localhost:8080/manager/text</url>
                     <update>true</update>
                     <path>/${build.finalName}</path>
-                    <username>manager-script</username>
+                    <username>manager</username>
                     <password>pass</password>
                 </configuration>
             </plugin>

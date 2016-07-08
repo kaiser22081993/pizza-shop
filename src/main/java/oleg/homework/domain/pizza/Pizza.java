@@ -1,32 +1,34 @@
 package oleg.homework.domain.pizza;
 
+import oleg.homework.domain.DeliveryItem;
+
 import javax.persistence.*;
 
-@Entity
-@Table(name = "pizza")
+
 public class Pizza {
 
-    @Id
+
     private int id;
     private String title;
     private float  price;
     private String preview;
     private String previewLarge;
     private String description;
-    private int quantity = 1;
+    private DeliveryItem deliveryItem;
 
 
     public Pizza() {
 
     }
 
-    public Pizza(int id, String description, String previewLarge, String preview, float price, String title) {
+    public Pizza(int id, String description, String previewLarge, String preview, float price, String title,DeliveryItem item) {
         this.id = id;
         this.description = description;
         this.previewLarge = previewLarge;
         this.preview = preview;
         this.price = price;
         this.title = title;
+        this.deliveryItem = item;
     }
 
 
@@ -78,13 +80,6 @@ public class Pizza {
         this.id = id;
     }
 
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
 
     public static Pizza generateRandomPizza() {
         Pizza p = new Pizza();
