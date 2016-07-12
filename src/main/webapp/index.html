@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <!-- saved from url=(0049)http://mafia.ua/kiev/menu-dostavki/italian/pizza/ -->
-<html xmlns="http://www.w3.org/1999/xhtml" class="wf-ubuntu-n3-inactive wf-inactive"  ng-app="BasicHttpAuthExample">
+<html xmlns="http://www.w3.org/1999/xhtml" class="wf-ubuntu-n3-inactive wf-inactive" ng-app="BasicHttpAuthExample">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
@@ -291,8 +291,6 @@
     <link media="all" rel="stylesheet" href="resources/pizza_files/mafia-map.css" type="text/css">
     <!--[if lt IE 7]>
     <link rel="stylesheet" type="text/css" href="/static/css/lt7.css" media="screen"/><![endif]-->
-
-
 
 
     <link media="all" rel="stylesheet" href="resources/pizza_files/select2.css" type="text/css">
@@ -2437,7 +2435,8 @@
     <div id="rhHighlight" class="rh-reset"
          style="position: absolute; border: 1px dashed rgb(186, 38, 38); opacity: 0.4; display: none; z-index: 9999; padding: 3px; cursor: pointer; box-shadow: black 0px 0px 7px; background: rgb(228, 242, 253);"></div>
     <div id="rh-arrow" style="display: none" class="rh-arrow rh-reset">
-        <div class="rh-arrowContainer rh-reset"><img class="rh-reset rh-face" src="resources/pizza_files/Ava_default.png">
+        <div class="rh-arrowContainer rh-reset"><img class="rh-reset rh-face"
+                                                     src="resources/pizza_files/Ava_default.png">
 
             <p class="rh-reset">Обратите внимание</p>
 
@@ -2496,7 +2495,8 @@
     <div id="rh-arrow" style="padding: 0;" class="rh-reset">
         <div class="placeholder rh-reset">
             <div id="rh-invitation" class="rh-arrowContainer" style="display: none;">
-                <div class="rh-text rh-reset"><img alt="" class="rh-face rh-reset" src="resources/pizza_files/Ava_default.png">
+                <div class="rh-text rh-reset"><img alt="" class="rh-face rh-reset"
+                                                   src="resources/pizza_files/Ava_default.png">
 
                     <div style="height: 8px;" class="rh-reset"></div>
                     <span id="rh-welcome" class="rh-reset"></span></div>
@@ -2553,7 +2553,8 @@
                      data-slug="basic_image">
 
                     <div class="shortcode_content">
-                        <img src="resources/pizza_files/email-delivery-site222-09.jpg" style="width: inherit; height: inherit;">
+                        <img src="resources/pizza_files/email-delivery-site222-09.jpg"
+                             style="width: inherit; height: inherit;">
                     </div>
                 </div>
 
@@ -2659,7 +2660,6 @@
             </li>
 
 
-
         </ul>
 
 
@@ -2684,7 +2684,8 @@
                     <div id="list_filter_widget">
 
 
-                        <a href="http://mafia.ua/kiev/menu-dostavki/italian/pizza/index.html?tag=" class="active">Все</a>
+                        <a href="http://mafia.ua/kiev/menu-dostavki/italian/pizza/index.html?tag="
+                           class="active">Все</a>
 
 
                     </div>
@@ -2728,16 +2729,17 @@
                 </div>
                 <div class="clearfix"></div>
                 <div class="banner carusel">
-                    <a class="btn-prev" href="http://mafia.ua/kiev/menu-dostavki/italian/pizza/#index.html"><img class="png"
-                                                                                                       src="resources/pizza_files/btn-prev.png"
-                                                                                                       width="56"
-                                                                                                       height="59"
-                                                                                                       alt="previous"></a>
-                    <a class="btn-next" href="http://mafia.ua/kiev/menu-dostavki/italian/pizza/#index.html"><img class="png"
-                                                                                                       src="resources/pizza_files/btn-next.png"
-                                                                                                       width="56"
-                                                                                                       height="59"
-                                                                                                       alt="next"></a>
+                    <a class="btn-prev" href="http://mafia.ua/kiev/menu-dostavki/italian/pizza/#index.html"><img
+                            class="png"
+                            src="resources/pizza_files/btn-prev.png"
+                            width="56"
+                            height="59"
+                            alt="previous"></a>
+                    <a class="btn-next" href=""><img class="png"
+                                                     src="resources/pizza_files/btn-next.png"
+                                                     width="56"
+                                                     height="59"
+                                                     alt="next"></a>
 
                     <div class="holder">
                         <div class="one_slide slick-initialized slick-slider">
@@ -2749,7 +2751,7 @@
                                          style="width: 680px;">
 
 
-                                        <a href="http://mafia.ua/kiev/news/details/zabirajte-i-ekonomte/">
+                                        <a href="">
                                             <img src="resources/pizza_files/zabirajte-i-ekonomte_1.jpg" alt="">
                                         </a>
 
@@ -2759,7 +2761,7 @@
                                          style="width: 680px;">
 
 
-                                        <a href="http://mafia.ua/kiev/menu-dostavki/italian/pizza/italyani/index.html">
+                                        <a href="">
                                             <img src="resources/pizza_files/kievitalyano.jpg" alt="">
                                         </a>
 
@@ -2854,13 +2856,15 @@
 
                 <div class="item-list" ng-controller="myCtrl">
 
-
-
+                    <div class="orders" ng-repeat="order in orders track by $index">
+                        <p>{{order.customer}}</p>
+                    </div>
                     <div class="item" ng-repeat="pizza in pizzas track by $index">
                         <div class="img rel">
                             <a class="name"
-                               href="http://mafia.ua/kiev/menu-dostavki/italian/pizza/picca-ot-shefa-metrovaya/index.html">
-                                <img src="resources/pizza_files/picca-ot-shefa-metrovaya.jpg" alt="Пицца от шефа метровая"
+                               href="">
+                                <img src="resources/pizza_files/picca-ot-shefa-metrovaya.jpg"
+                                     alt="Пицца от шефа метровая"
                                      title="Пицца от шефа метровая">
 
                                 <img class="overlay" src="resources/pizza_files/leybanew200x200px_3.png"
@@ -2873,7 +2877,7 @@
                         </div>
                         <div class="info">
                             <a class="name"
-                               href="http://mafia.ua/kiev/menu-dostavki/italian/pizza/picca-ot-shefa-metrovaya/index.html">{{pizza.title}}</a>
+                               href="">{{pizza.title}}</a>
 
                             <p>Хамон, помидоры черри, пармезан, маскарпоне, моцарелла, сливки, руккола, орегано, соус
                                 Pomodoro.</p>
@@ -2895,9 +2899,7 @@
                     </div>
 
 
-
                 </div>
-
 
 
                 <div class="seotext"><font color="black"><br><br><br>
@@ -2942,36 +2944,39 @@
 
 
                             <!-- корзина с заказами. правая боковая панель -->
-                            <div id="cart">
+                            <div id="cart" ng-if="totalSum > 0">
 
-                                <div id="line2578009"  ng-repeat="item in ordered track by $index">
+                                <div id="line2578009" ng-repeat="item in ordered track by $index">
                                     <div class="line">
                                         <h3>
 
-                                            <a href="http://mafia.ua/kiev/menu-dostavki/napitki/soki/apelsin/">
+                                            <a href="">
                                                 {{item.pizza.title}}
                                             </a>
 
                                         </h3>
                                         <a class="btn-close"
-                                           href="http://mafia.ua/shop/cart/remove/2578009/">отменить</a>
+                                           href="">отменить</a>
                                     </div>
                                     <div class="box">
                                         <div class="img rel">
 
-                                            <a href="http://mafia.ua/kiev/menu-dostavki/napitki/soki/apelsin/">
-                                                <img src="resources/pizza_files/apelsin_2.small.png" alt="Апельсиновый сок">
+                                            <a href="">
+                                                <img src="resources/pizza_files/apelsin_2.small.png"
+                                                     alt="Апельсиновый сок">
 
                                             </a>
 
                                         </div>
                                         <div class="form-price">
-                                            <form action="http://mafia.ua/kiev/menu-dostavki/italian/pizza/#index.html">
+                                            <form action="">
                                                 <fieldset>
                                                     <div class="text-form">
 
-                                                        <input id="lbl2578009" class="cart_item_count" type="text" ng-change="changeOrderQuantity($index)" ng-model="item.quantity"
-                                                               >
+                                                        <input id="lbl2578009" class="cart_item_count" type="text"
+                                                               ng-change="changeOrderQuantity($index)"
+                                                               ng-model="item.quantity"
+                                                                >
 
                                                     </div>
                                                     <b>x</b>
@@ -2986,7 +2991,8 @@
                                 <div class="info clearfix">
                                     <div>
                                         <div class="dt">Итого:</div>
-                                        <div class="dd"><font id="total_cost_before_delivery">{{totalSum}}</font> грн.</div>
+                                        <div class="dd"><font id="total_cost_before_delivery">{{totalSum}}</font> грн.
+                                        </div>
                                     </div>
                                     <div>
                                         <div class="dt">Упаковка:</div>
@@ -3012,34 +3018,28 @@
                                         <em>грн.</em><br>
                                     </strong>
 
-                                    <script >
-
-                                        function menuSwitch(){
-
-                                            $(".btn-order").click(function(){
-                                                alert('on toggle');
-                                                $(".order-menu").toggle(100);
-                                            });
-                                        }
-                                        $(document).ready(menuSwitch);
-                                    </script>
 
                                     <div class="take-with">
                                         <style>
                                             .order-menu {
                                                 padding: 15px;
                                                 border: 1px solid black;
+                                                margin-bottom: 15px;
                                             }
                                         </style>
-                                        <div class="order-menu" >
+                                        <div class="order-menu">
 
-                                            <p>Имя</p> <input size="25" value="Имя"/><br>
-                                            <p>Адрес</p> <input size="25" value="Адрес"/><br>
-                                            <p>Телефон</p> <input size="25" value="Телефон"/><br>
+                                            <p>Имя</p> <input size="25" ng-model="fields.userName" value="Имя"/><br>
+
+                                            <p>Адрес</p> <input size="25" ng-model="fields.userAddress"
+                                                                value="Адрес"/><br>
+
+                                            <p>Телефон</p> <input size="25" ng-model="fields.userPhone"
+                                                                  value="Телефон"/><br>
 
 
                                         </div>
-                                        <a class="btn-order" ng-click="makeOrder()"  href="" rel="facebox">Заказать
+                                        <a class="btn-order" ng-click="commitOrder()" href="" rel="facebox">Заказать
                                             доставку</a>
                                     </div>
 
@@ -3051,7 +3051,6 @@
                         </div>
                     </div>
                 </div>
-
 
 
                 <!--<div class="recommendations">-->
@@ -3172,7 +3171,8 @@
                 <!--</div>-->
 
 
-                <img style="margin-bottom:-4px;" src="resources/pizza_files/mafiasign-formnov2014banner222x222.png" alt=""
+                <img style="margin-bottom:-4px;" src="resources/pizza_files/mafiasign-formnov2014banner222x222.png"
+                     alt=""
                      width="222" height="222">
 
                 <div class="jumbotron">
@@ -3180,7 +3180,6 @@
                         <div ng-view></div>
                     </div>
                 </div>
-
 
 
                 <div id="right_col_bottom_placeholder">
@@ -3199,25 +3198,25 @@
         <div class="box">
             <p>© 2002 - 2014 MAFIA Все права защищены.</p>
 
-            <p><a href="http://mafia.ua/form/leave_feedback/" rel="facebox">Оставьте отзыв</a></p>
+            <p><a href="" rel="facebox">Оставьте отзыв</a></p>
         </div>
         <ul>
 
-            <li><a href="http://mafia.ua/kiev/p/reklamodatelyam/">Рекламодателям</a></li>
+            <li><a href="">Рекламодателям</a></li>
 
-            <li><a href="http://mafia.ua/kiev/p/bonusnaya-programma/">Бонусная программа </a></li>
+            <li><a href="">Бонусная программа </a></li>
 
-            <li><a href="http://mafia.ua/kiev/m/about/">О компании</a></li>
+            <li><a href="">О компании</a></li>
 
-            <li><a href="http://mafia.ua/kiev/p/partnership/">Партнерство </a></li>
+            <li><a href="">Партнерство </a></li>
 
-            <li><a href="http://mafia.ua/kiev/p/nashi-partnery_kiev/">Наши партнеры</a></li>
+            <li><a href="">Наши партнеры</a></li>
 
-            <li><a href="http://mafia.ua/kiev/p/vakansii_kiev/">Вакансии</a></li>
+            <li><a href="">Вакансии</a></li>
 
-            <li><a href="http://mafia.ua/kiev/p/politika-konfidencialnosti/">Политика конфиденциальности</a></li>
+            <li><a href="">Политика конфиденциальности</a></li>
 
-            <li><a href="http://mafia.ua/kiev/p/zagruzit-mobilnoe-prilozhenie-mafia-dlya-ios/">Mafia для iOS</a></li>
+            <li><a href="">Mafia для iOS</a></li>
 
         </ul>
 
@@ -3245,9 +3244,6 @@
 
 
 <!-- /Softcube -->
-
-
-
 
 
 <!--
