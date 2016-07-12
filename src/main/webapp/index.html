@@ -2855,8 +2855,34 @@
                 </div>
 
                 <div class="item-list" ng-controller="myCtrl">
+                    <style>
+                        .order_table {
+                            width: 600px;
+                            border: solid #000000;
+                        }
 
-                    <div class="orders" ng-repeat="order in orders track by $index">
+                        .order_cells {
+                            padding: 25px;
+                            border: solid #000000 1px;
+                            text-align: left;
+                        }
+                    </style>
+                    <div class="orders" ng-if="ordersVisible">
+                        <table class="order_table">
+                            <tr class="order_cells">
+                                <td>Клиент</td>
+                                <td>Цена</td>
+                                <td>Адрес</td>
+                                <td>Телефон</td>
+                            </tr>
+
+                            <tr class="order_cells" ng-repeat="order in orders track by $index">
+                                <td>{{order.customer}}</td>
+                                <td>{{order.price}}</td>
+                                <td>{{order.address}}</td>
+                                <td>{{order.phone}}</td>
+                            </tr>
+                        </table>
                         <p>{{order.customer}}</p>
                     </div>
                     <div class="item" ng-repeat="pizza in pizzas track by $index">

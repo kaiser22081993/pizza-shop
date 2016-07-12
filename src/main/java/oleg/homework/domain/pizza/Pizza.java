@@ -88,7 +88,7 @@ public class Pizza {
         p.setDescription("description: " + uuid);
         p.setPreviewLarge("large/preview/" + uuid);
         p.setPreview("preview/" + uuid);
-        p.setPrice((float) (uuid + 231.312));
+        p.setPrice((float) (uuid + 15));
         p.setId(uuid);
         return p;
     }

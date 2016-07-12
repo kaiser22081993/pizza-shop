@@ -8,16 +8,18 @@ import javax.enterprise.context.ApplicationScoped;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicLong;
 
 
 @ApplicationScoped
 public class OrderRepository {
 
-    private ConcurrentHashMap<String,Order> ordersDb;
-
+    private ConcurrentHashMap<Long,Order> ordersDb;
+    private AtomicLong idCounter;
     @PostConstruct
     public void init() {
         ordersDb = new ConcurrentHashMap<>();
+        idCounter = new AtomicLong(0);
         DeliveryItem p = new DeliveryItem();
 
     }
@@ -27,7 +29,8 @@ public class OrderRepository {
     }
 
     public void createOrder(Order o) {
-        ordersDb.put(o.getCustomer(),o);
+        o.setId(idCounter.incrementAndGet());
+        ordersDb.put(o.getId(),o);
     }
 
 

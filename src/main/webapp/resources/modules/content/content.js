@@ -133,7 +133,7 @@ angular.module('Content')
                 canceled: false,
                 address: $scope.fields.userAddress,
                 phone: $scope.fields.userPhone,
-
+                price: $rootScope.totalSum,
                 item : $rootScope.ordered
             };
             $rootScope.orders.push(order);
@@ -147,14 +147,35 @@ angular.module('Content')
                 data: order
 
             }).then(function mySucces(response) {
-                alert('order added!')
+                $rootScope.orders = [];
+                $rootScope.totalSum = 0;
+                $rootScope.uploadOrders();
+                $rootScope.ordered = [];
+
             }, function myError(response) {
                 alert(response.statusText);
             });
 
-            $rootScope.totalSum = 0;
-            $rootScope.ordered = [];
         };
+        $rootScope.ordersVisible = false;
+        $rootScope.showOrders = function() {
+            $rootScope.uploadOrders();
+
+            $rootScope.ordersVisible = !$rootScope.ordersVisible;
+        };
+        $rootScope.uploadOrders = function() {
+            $http({
+                url: "rest/order",
+                method: "GET"
+            }).then(function mySucces(response){
+                $rootScope.orders = response.data;
+
+            }, function meError(response){
+                alert(response.statusText);
+            });
+        };
+
+
 
 
     });
